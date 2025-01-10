@@ -34,7 +34,7 @@ jobs:
         flake8 practical2.py --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        pytest practical2.py
+        pytest  # Let pytest discover all the tests in the repository
     - name: Install cyclonedx-py
       run: |
         python -m pip install cyclonedx-py
