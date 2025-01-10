@@ -23,7 +23,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        python -m pip install flake8 pytest cyclonedx-python
+        python -m pip install flake8 pytest cyclonedx-bom
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Lint with flake8
       run: |
@@ -36,7 +36,7 @@ jobs:
         pytest
     - name: Generate SBOM with CycloneDX
       run: |
-        cyclonedx-py --output sbom.json
+        cyclonedx-bom --output sbom.json
     - name: Upload SBOM as artifact
       uses: actions/upload-artifact@v3
       with:
